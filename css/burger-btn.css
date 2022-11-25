@@ -1,0 +1,64 @@
+.burger-btn {
+  display: none;
+  --width: 35px;
+  width: var(--width);
+  aspect-ratio: 1.26;
+  position: relative;
+  z-index: 100;
+}
+@media (max-width: 768px) {
+  .burger-btn {
+    display: block;
+  }
+}
+.burger-btn span {
+  display: block;
+  width: var(--width);
+  height: calc(var(--width) / 10);
+  border-radius: calc(var(--width) / 10);
+  background-color: var(--clr-font);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+.burger-btn::before, .burger-btn::after {
+  content: "";
+  position: absolute;
+  width: var(--width);
+  height: calc(var(--width) / 10);
+  left: 0;
+  border-radius: calc(var(--width) / 10);
+  background-color: var(--clr-font);
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+.burger-btn::before {
+  top: 0;
+}
+.burger-btn::after {
+  bottom: 0;
+}
+.burger-btn._active span {
+  opacity: 0;
+}
+.burger-btn._active::before {
+  -webkit-transform: translateY(-10%) rotate(-45deg);
+          transform: translateY(-10%) rotate(-45deg);
+}
+.burger-btn._active::after {
+  -webkit-transform: translateY(10%) rotate(45deg);
+          transform: translateY(10%) rotate(45deg);
+}
+
+#nav-menu {
+  z-index: 90;
+  left: 100%;
+}
+#nav-menu._active {
+  left: 0;
+}
+
+._lock {
+  overflow: hidden;
+}
