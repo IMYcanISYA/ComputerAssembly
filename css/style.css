@@ -75,6 +75,7 @@ button {
 
 a {
   text-decoration: none;
+  color: var(--clr-font);
 }
 
 /*-----------------------Styles-------------------------*/
@@ -90,6 +91,7 @@ section {
 }
 
 ._btn {
+  color: var(--clr-font);
   cursor: pointer;
   white-space: nowrap;
   padding: 10px 30px;
